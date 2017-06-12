@@ -133,8 +133,8 @@ namespace SoundLibTool
 		static string GetTempPath(long size)
 		{
 			return Paths.TransferPath;
-			var ramDriveSpaceAvaiable = new DriveInfo(Path.GetPathRoot(Paths.RamDriveTransferPath)).AvailableFreeSpace - 1000000000;
-			return size < ramDriveSpaceAvaiable ? Paths.RamDriveTransferPath : Paths.TransferPath;
+			//var ramDriveSpaceAvaiable = new DriveInfo(Path.GetPathRoot(Paths.RamDriveTransferPath)).AvailableFreeSpace - 1000000000;
+			//return size < ramDriveSpaceAvaiable ? Paths.RamDriveTransferPath : Paths.TransferPath;
 		}
 
 		static void MarkFolderWritable(string folder)
@@ -231,11 +231,11 @@ namespace SoundLibTool
 			return process.ExitCode;
 		}
 
-		static void Unmount()
-		{
-			Console.WriteLine("Unmounting G:");
-			StartProcess(@"C:\Program Files\PowerISO\piso.exe", "unmount G:");
-		}
+		//static void Unmount()
+		//{
+		//	Console.WriteLine("Unmounting G:");
+		//	StartProcess(@"C:\Program Files\PowerISO\piso.exe", "unmount G:");
+		//}
 
 		public static void CategorizeLibraryFolders()
 		{

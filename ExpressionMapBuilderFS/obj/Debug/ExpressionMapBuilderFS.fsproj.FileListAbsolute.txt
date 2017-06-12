@@ -1,0 +1,9 @@
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.exe.config
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.XML
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.exe
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.pdb
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\FSharp.Core.dll
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\System.ValueTuple.dll
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\FSharp.Core.xml
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.exe
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.pdb

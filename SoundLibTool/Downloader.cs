@@ -89,7 +89,7 @@ namespace SoundLibTool
 						catch (NoSuchElementException)
 						{
 						}
-						catch (WebDriverException e)
+						catch (WebDriverException)
 						{
 							//driver?.Close();
 							//driver = new FirefoxDriver(new FirefoxProfileManager().GetProfile("Test"));

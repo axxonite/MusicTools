@@ -112,13 +112,11 @@
 			var expressionMapRegEx = new Regex(@"(Map|Base|RootKey|BaseChannel|Art|Remote|StdRemotes)\s*:\s*(?:([^,]+),?)+");
 			var defaultRootKey = Array.IndexOf(NoteNames, "C0");
 
-			var lines = File.ReadAllLines(filename);
+			var lines = File.ReadAllLines(filename).Where(s => s != "");
 			ExpressionMap map = null;
 			var key = defaultRootKey;
 			foreach (var line in lines)
 			{
-				if (line == "")
-					continue;
 				var match = expressionMapRegEx.Matches(line)[0];
 				Debug.Assert(match.Groups[1].Captures[0].Value.ToLower() == "map" || map != null, "Must declare map block first.");
 				switch (match.Groups[1].Captures[0].Value.ToLower())

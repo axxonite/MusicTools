@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundLibTool", "SoundLibTool\SoundLibTool.csproj", "{29548C5B-6F36-4E6B-8F3F-EF1C13CC3534}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstrumentEnumerator", "InstrumentEnumerator\InstrumentEnumerator.csproj", "{505C04E2-34EA-481B-B193-088D40C67DED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionMapBuilder", "ExpressionMapBuilder\ExpressionMapBuilder.csproj", "{DCB362C0-5FBC-4382-AA20-0826550A986F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ExpressionMapBuilderFS", "ExpressionMapBuilderFS\ExpressionMapBuilderFS.fsproj", "{5198E932-9DD0-47B9-9F45-0D2A73E8A4B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DCB362C0-5FBC-4382-AA20-0826550A986F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCB362C0-5FBC-4382-AA20-0826550A986F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCB362C0-5FBC-4382-AA20-0826550A986F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5198E932-9DD0-47B9-9F45-0D2A73E8A4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5198E932-9DD0-47B9-9F45-0D2A73E8A4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5198E932-9DD0-47B9-9F45-0D2A73E8A4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5198E932-9DD0-47B9-9F45-0D2A73E8A4B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
