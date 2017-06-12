@@ -1,6 +1,8 @@
-﻿open System.IO
+﻿open System
+open System.IO
 open System.Diagnostics
 open System.Text.RegularExpressions
+open HtmlAgilityPack
 
 type Articulation = 
     { name : string
@@ -94,9 +96,75 @@ let parseMapFile f =
         expressionMaps <- expressionMaps |> Map.add map.name map
     (expressionMaps)
 
+let createHtmlDocument contents =
+    let document = new HtmlDocument()
+    document.LoadHtml(contents)
+    (document)
+
+let soundSlotNames = [| ("leg", 0, true); ("long", 1, true); ("sus", 1, false); ("short", 2, true); ("stac", 2, false); ("spic", 3, false); ("pizz", 4, false); ("trem", 5, false); ("trills+1", 6, false); ("trills+2", 7, false); ("trills", 6, true) |]
+
+let saveExpressionMaps (maps : Map<string, ExpressionMap>) =
+    let templateFile = File.ReadAllText("Template.expressionmap")
+    for map in maps |> Map.toList |> List.map(fun (_,m) -> m) do
+        let document = createHtmlDocument templateFile
+        let rootNode = document.DocumentNode
+        let mutable nextAvailableRemote = 8
+        if (not map.standardRemoteAssignments) then
+            nextAvailableRemote <- 0
+        let soundSlots = rootNode.SelectNodes("//obj[@class='PSoundSlot']") |> Seq.cast<HtmlNode option> |> Seq.toArray
+        let mapNameNode = rootNode.SelectSingleNode("instrumentmap/string[@name='name']")
+        for remote in map.remotes do
+            let assignNextRemote () =
+                let slot = nextAvailableRemote
+                nextAvailableRemote <- nextAvailableRemote + 1
+                slot
+            let matchSlot () =
+                soundSlotNames |> Array.tryFind(fun (name,index, mustStartWith) -> 
+                    soundSlots.[index] <> None && 
+                    match mustStartWith with
+                    | true -> remote.name.ToLower().StartsWith(name)
+                    | false -> remote.name.ToLower().Contains(name))
+            let remoteSlot = 
+                match remote.remoteSlot with
+                | -1 ->
+                    match map.standardRemoteAssignments with
+                    | true -> 
+                        match matchSlot() with
+                        | Some slot -> 
+                            let _,index,_ = slot
+                            index
+                        | None -> assignNextRemote()
+                    | false -> assignNextRemote()
+                | _ -> remote.remoteSlot
+            let soundSlot = soundSlots.[remoteSlot].Value
+            soundSlot.SelectSingleNode("member[@name='name']/string").SetAttributeValue("value", remote.name) |> ignore
+            let keyswitchNode = soundSlot.SelectSingleNode(".//obj[@class='POutputEvent']");
+            match remote.keyswitched with
+            | false -> keyswitchNode.Remove()
+            | true -> keyswitchNode.SelectSingleNode("int[@name='data1]").SetAttributeValue("value", remote.key.ToString()) |> ignore
+
+            if (remote.channelOffset <> -1 ) then
+                let noteChangerNode = soundSlot.SelectSingleNode(".//obj[@class='PSlotNoteChanger']/int[@name='channel']")
+                noteChangerNode.SetAttributeValue("value", (map.baseChannel + remote.channelOffset).ToString()) |> ignore
+            soundSlots.[remoteSlot] <- None
+        
+        soundSlots |> Array.filter(fun s -> s <> None) |> Array.iter(fun s -> s.Value.Remove() )
+
+        if (map.standardRemoteAssignments) then
+            // Remove unused articulation visual slots
+            let slotVisuals = rootNode.SelectNodes("//member[@name='slotvisuals;]//obj[@class='USlotVisuals']") |> Seq.cast<HtmlNode> |> Seq.toArray
+            for i in 0..slotVisuals.Length do
+                if (soundSlots.[i] <> None) then
+                    slotVisuals.[i].Remove()
+        else
+            rootNode.SelectNodes("//obj[@class='USlotVisuals']") |> Seq.cast<HtmlNode> |> Seq.iter(fun s -> s.Remove() )
+
+        let output = document.DocumentNode.OuterHtml.Replace("id=", "ID=").Replace("instrumentmap", "InstrumentMap")
+        File.WriteAllText(String.Format(@"Maps\{0}.expressionMap", map.name), output)
+
 let buildExpressionMaps f = 
     let maps = parseMapFile f
-    ()
+    saveExpressionMaps maps
 
 [<EntryPoint>]
 let main argv = 
