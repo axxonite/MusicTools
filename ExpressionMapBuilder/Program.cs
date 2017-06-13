@@ -16,22 +16,22 @@
 
 	struct Articulation
 	{
-		public Articulation(string name, int key, int channelOffset, bool keyswitched, int remoteSlot)
+		public Articulation(string name, int outputKS, int channelOffset, bool keyswitched, int inputKS)
 		{
 			Name = name.TrimEnd('*');
 			ExcludeFromRemote = name.EndsWith("*", StringComparison.Ordinal);
 			ChannelOffset = channelOffset;
 			Keyswitched = keyswitched;
-			Key = key;
-			RemoteSlot = remoteSlot;
+			OutputKS = outputKS;
+			InputKS = inputKS;
 		}
 
 		public int ChannelOffset { get; }
 		public bool ExcludeFromRemote { get; }
-		public int Key { get; }
+		public int OutputKS { get; }
 		public bool Keyswitched { get; }
 		public string Name { get; }
-		public int RemoteSlot { get; }
+		public int InputKS { get; }
 	}
 
 	sealed class ExpressionMap
@@ -50,6 +50,7 @@
 			BaseChannel = baseMap.BaseChannel;
 			Remotes = new List<Articulation>(baseMap.Remotes);
 			StandardRemoteAssignments = baseMap.StandardRemoteAssignments;
+			InheritedArticulations = true;
 		}
 
 		public List<Articulation> Articulations { get; private set; } = new List<Articulation>();
@@ -58,6 +59,7 @@
 		public List<Articulation> Remotes { get; private set; } = new List<Articulation>();
 		public int RootKey { get; private set; }
 		public bool StandardRemoteAssignments { get; set; } = true;
+		public bool InheritedArticulations { get; set; }
 
 		public void AssignRemotes()
 		{
@@ -68,8 +70,8 @@
 		public void ChangeRootKey(int newKey)
 		{
 			var diff = newKey - RootKey;
-			Articulations = Articulations.Select(a => new Articulation(a.Name, a.Key + diff, a.ChannelOffset, a.Keyswitched, a.RemoteSlot)).ToList();
-			Remotes = Remotes.Select(a => new Articulation(a.Name, a.Key + diff, a.ChannelOffset, a.Keyswitched, a.RemoteSlot)).ToList();
+			Articulations = Articulations.Select(a => new Articulation(a.Name, a.OutputKS + diff, a.ChannelOffset, a.Keyswitched, a.InputKS)).ToList();
+			Remotes = Remotes.Select(a => new Articulation(a.Name, a.OutputKS + diff, a.ChannelOffset, a.Keyswitched, a.InputKS)).ToList();
 			RootKey = newKey;
 		}
 	}
@@ -85,7 +87,7 @@
 				"B7", "C8", "C#8", "D8", "D#8", "E8", "F8", "F#8", "G8"
 			};
 
-		readonly Tuple<string, int, bool>[] _soundSlotNames =
+		readonly Tuple<string, int, bool>[] _inputKSNames =
 			{
 				Tuple.Create("leg", 0, true), Tuple.Create("long", 1, true), Tuple.Create("sus", 1, false), Tuple.Create("short", 2, true), Tuple.Create("stac", 2, false), Tuple.Create("spic", 3, false),
 				Tuple.Create("pizz", 4, false), Tuple.Create("trem", 5, false), Tuple.Create("trills+1", 6, false), Tuple.Create("trills+2", 7, false), Tuple.Create("trills", 6, true)
@@ -106,10 +108,15 @@
 			return document;
 		}
 
+		// todo I want to be able to define the various 8dio instruments as separate entries for their articulations, and then load these separate entries in a different expression map and refer to them there.
+		// this is because I plan to have 8dio function in one of two modes: either a pass through mode with 3 separate tracks for the different articulations available, or a combined mode with a select set of
+		// articulations grouped up under one track.
+		// why do I need separate entries again? Can't I just refer to the existing entries? I think so...
+
 		[SuppressMessage("ReSharper", "PossibleNullReferenceException")] void ParseMapFile(string filename)
 		{
-			var articulationsRegex = new Regex(@" *([\w\-+/*() ]+)(?:\[(?:(Ch|NoKS|Slot)(\+?\d+)?\|?)+\])?");
-			var expressionMapRegEx = new Regex(@"(Map|Base|RootKey|BaseChannel|Art|Remote|StdRemotes)\s*:\s*(?:([^,]+),?)+");
+			var articulationsRegex = new Regex(@" *([\w\-+/*() ]+)(?:\[(?:(Ch|NoKS|InputKS)(\+?\d+)?\|?)+\])?");
+			var expressionMapRegEx = new Regex(@"(Map|Base|RootKey|BaseChannel|Art|Remote|StdRemotes)\s*(\[[^]]*\])?:\s*(?:([^,]+),?)+");
 			var defaultRootKey = Array.IndexOf(NoteNames, "C0");
 
 			var lines = File.ReadAllLines(filename).Where(s => s != "");
@@ -144,15 +151,22 @@
 						map.StandardRemoteAssignments = match.Groups[2].Captures[0].Value.ToLower() == "true";
 						break;
 					case "art":
-						map.Articulations.Clear();
+						if ( map.InheritedArticulations)
+						{
+							map.Articulations.Clear();
+							map.InheritedArticulations = false;
+						}
 						map.Remotes.Clear();
-						foreach (Capture articulationEntry in match.Groups[2].Captures)
+						var defaultAttributesText = match.Groups[2].Captures[0].Value;
+						var defaultAttributes = defaultAttributesText != "" ? articulationsRegex.Match("Default" + defaultAttributesText).Groups[2].Captures.Cast<Capture>().ToList() : new List<Capture>();
+						foreach (Capture articulationEntry in match.Groups[3].Captures)
 						{
 							var articulationMatch = articulationsRegex.Matches(articulationEntry.Value)[0];
 							var channelOffset = -1;
-							var soundSlot = -1;
+							var inputKS = -1;
 							var keyswitched = true;
-							foreach (Capture attribute in articulationMatch.Groups[2].Captures)
+							var attributes = articulationMatch.Groups[2].Captures.Cast<Capture>().ToList().Concat(defaultAttributes);
+							foreach (Capture attribute in attributes)
 							{
 								switch (attribute.Value.ToLower())
 								{
@@ -162,22 +176,22 @@
 									case "ch":
 										channelOffset = int.Parse(articulationMatch.Groups[3].Captures[0].Value);
 										break;
-									case "slot":
-										soundSlot = int.Parse(articulationMatch.Groups[3].Captures[0].Value) - 1;
+									case "inputks":
+										inputKS = int.Parse(articulationMatch.Groups[3].Captures[0].Value) - 1;
 										break;
 									default:
 										Debug.Assert(false);
 										break;
 								}
 							}
-							var articulation = new Articulation(articulationMatch.Groups[1].Captures[0].Value, key, channelOffset, keyswitched, soundSlot);
+							var articulation = new Articulation(articulationMatch.Groups[1].Captures[0].Value, key, channelOffset, keyswitched, inputKS);
 							if (keyswitched)
 								key++;
 							if (articulation.Name.ToLower() != "none")
 								map.Articulations.Add(articulation);
 						}
 						break;
-					case "remote":
+					case "remotes":
 						map.Remotes.Clear();
 						foreach (Capture remoteEntry in match.Groups[2].Captures)
 						{
@@ -204,33 +218,33 @@
 				var nextAvailableRemote = map.StandardRemoteAssignments
 					                          ? 8
 					                          : 0;
-				var soundSlots = rootNode.SelectNodes("//obj[@class='PSoundSlot']").ToArray();
+				var inputKSSlots = rootNode.SelectNodes("//obj[@class='PSoundSlot']").ToArray();
 				var mapNameNode = rootNode.SelectSingleNode("instrumentmap/string[@name='name']");
 				mapNameNode.SetAttributeValue("value", map.Name);
 
 				foreach (var remote in map.Remotes)
 				{
-					var remoteSlot = remote.RemoteSlot;
-					if (remoteSlot == -1 && map.StandardRemoteAssignments)
-						remoteSlot = _soundSlotNames.FirstOrDefault(s => soundSlots[s.Item2] != null && (s.Item3 ? remote.Name.ToLower().StartsWith(s.Item1, StringComparison.Ordinal) : remote.Name.ToLower().Contains(s.Item1)))?.Item2 ?? -1;
-					if (remoteSlot == -1)
-						remoteSlot = nextAvailableRemote++;
-					var soundSlot = soundSlots[remoteSlot];
-					soundSlot.SelectSingleNode("member[@name='name']/string").SetAttributeValue("value", remote.Name);
-					var keyswitchNode = soundSlot.SelectSingleNode(".//obj[@class='POutputEvent']");
+					var inputKS = remote.InputKS;
+					if (inputKS == -1 && map.StandardRemoteAssignments)
+						inputKS = _inputKSNames.FirstOrDefault(s => inputKSSlots[s.Item2] != null && (s.Item3 ? remote.Name.ToLower().StartsWith(s.Item1, StringComparison.Ordinal) : remote.Name.ToLower().Contains(s.Item1)))?.Item2 ?? -1;
+					if (inputKS == -1)
+						inputKS = nextAvailableRemote++;
+					var inputKSSlot = inputKSSlots[inputKS];
+					inputKSSlot.SelectSingleNode("member[@name='name']/string").SetAttributeValue("value", remote.Name);
+					var keyswitchNode = inputKSSlot.SelectSingleNode(".//obj[@class='POutputEvent']");
 					if (!remote.Keyswitched)
 						keyswitchNode.Remove();
 					else
-						keyswitchNode.SelectSingleNode("int[@name='data1']").SetAttributeValue("value", remote.Key.ToString());
+						keyswitchNode.SelectSingleNode("int[@name='data1']").SetAttributeValue("value", remote.OutputKS.ToString());
 					if (remote.ChannelOffset != -1)
 					{
-						var noteChangerNode = soundSlot.SelectSingleNode(".//obj[@class='PSlotNoteChanger']/int[@name='channel']");
+						var noteChangerNode = inputKSSlot.SelectSingleNode(".//obj[@class='PSlotNoteChanger']/int[@name='channel']");
 						noteChangerNode.SetAttributeValue("value", (map.BaseChannel + remote.ChannelOffset).ToString());
 					}
-					soundSlots[remoteSlot] = null;
+					inputKSSlots[inputKS] = null;
 				}
 
-				soundSlots.Where(s => s != null).ForEach(s => s.Remove());
+				inputKSSlots.Where(s => s != null).ForEach(s => s.Remove());
 
 				if (!map.StandardRemoteAssignments)
 					rootNode.SelectNodes("//obj[@class='USlotVisuals']").ForEach(s => s.Remove());
@@ -239,7 +253,7 @@
 					// Remove unused articulation visual slots.
 					var slotVisuals = rootNode.SelectNodes("//member[@name='slotvisuals']//obj[@class='USlotVisuals']").ToArray();
 					for (var i = 0; i < slotVisuals.Length; i++)
-						if (soundSlots[i] != null)
+						if (inputKSSlots[i] != null)
 							slotVisuals[i].Remove();
 				}
 

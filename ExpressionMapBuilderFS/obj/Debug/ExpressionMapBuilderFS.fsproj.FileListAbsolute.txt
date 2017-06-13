@@ -7,3 +7,16 @@ E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\System.ValueTuple.dl
 E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\FSharp.Core.xml
 E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.exe
 E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.pdb
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.exe.config
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.XML
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.exe
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\ExpressionMapBuilderFS.pdb
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\FSharp.Core.dll
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\HtmlAgilityPack.dll
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\System.ValueTuple.dll
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\HtmlAgilityPack.pdb
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\HtmlAgilityPack.xml
+C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\FSharp.Core.xml
+C:\Dev\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.fsprojResolveAssemblyReference.cache
+C:\Dev\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.exe
+C:\Dev\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.pdb
