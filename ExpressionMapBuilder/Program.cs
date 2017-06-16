@@ -116,7 +116,7 @@
 		[SuppressMessage("ReSharper", "PossibleNullReferenceException")] void ParseMapFile(string filename)
 		{
 			var articulationsRegex = new Regex(@" *([\w\-+/*() ]+)(?:\[(?:(Ch|NoKS|InputKS)(\+?\d+)?\|?)+\])?");
-			var expressionMapRegEx = new Regex(@"(Map|Base|RootKey|BaseChannel|Art|Remote|StdRemotes)\s*(\[[^]]*\])?:\s*(?:([^,]+),?)+");
+			var expressionMapRegEx = new Regex(@"(Map|Base|RootKey|BaseChannel|Art|Remotes|StdRemotes)\s*(\[[^]]*\])?:\s*(?:([^,]+),?)+");
 			var defaultRootKey = Array.IndexOf(NoteNames, "C0");
 
 			var lines = File.ReadAllLines(filename).Where(s => s != "");
@@ -130,25 +130,25 @@
 				{
 					case "map":
 						map?.AssignRemotes();
-						var mapName = match.Groups[2].Captures[0].Value;
+						var mapName = match.Groups[3].Captures[0].Value;
 						ExpressionMaps[mapName] = map = new ExpressionMap(mapName, defaultRootKey);
 						key = defaultRootKey;
 						break;
 					case "base":
-						var baseMap = ExpressionMaps[match.Groups[2].Captures[0].Value];
+						var baseMap = ExpressionMaps[match.Groups[3].Captures[0].Value];
 						map = ExpressionMaps[map.Name] = new ExpressionMap(map.Name, baseMap);
 						key = map.RootKey;
 						break;
 					case "rootkey":
-						var newKey = Array.IndexOf(NoteNames, match.Groups[2].Captures[0].Value);
+						var newKey = Array.IndexOf(NoteNames, match.Groups[3].Captures[0].Value);
 						map.ChangeRootKey(newKey);
 						key = newKey;
 						break;
 					case "basechannel":
-						map.BaseChannel = int.Parse(match.Groups[2].Captures[0].Value) - 1;
+						map.BaseChannel = int.Parse(match.Groups[3].Captures[0].Value) - 1;
 						break;
 					case "stdremotes":
-						map.StandardRemoteAssignments = match.Groups[2].Captures[0].Value.ToLower() == "true";
+						map.StandardRemoteAssignments = match.Groups[3].Captures[0].Value.ToLower() == "true";
 						break;
 					case "art":
 						if ( map.InheritedArticulations)
@@ -157,35 +157,14 @@
 							map.InheritedArticulations = false;
 						}
 						map.Remotes.Clear();
-						var defaultAttributesText = match.Groups[2].Captures[0].Value;
-						var defaultAttributes = defaultAttributesText != "" ? articulationsRegex.Match("Default" + defaultAttributesText).Groups[2].Captures.Cast<Capture>().ToList() : new List<Capture>();
+						var defaultAttributesText = match.Groups[2].Captures.Count > 0  ? ("Default" + match.Groups[2].Captures[0].Value) : "";
 						foreach (Capture articulationEntry in match.Groups[3].Captures)
 						{
-							var articulationMatch = articulationsRegex.Matches(articulationEntry.Value)[0];
-							var channelOffset = -1;
-							var inputKS = -1;
-							var keyswitched = true;
-							var attributes = articulationMatch.Groups[2].Captures.Cast<Capture>().ToList().Concat(defaultAttributes);
-							foreach (Capture attribute in attributes)
-							{
-								switch (attribute.Value.ToLower())
-								{
-									case "noks":
-										keyswitched = false;
-										break;
-									case "ch":
-										channelOffset = int.Parse(articulationMatch.Groups[3].Captures[0].Value);
-										break;
-									case "inputks":
-										inputKS = int.Parse(articulationMatch.Groups[3].Captures[0].Value) - 1;
-										break;
-									default:
-										Debug.Assert(false);
-										break;
-								}
-							}
-							var articulation = new Articulation(articulationMatch.Groups[1].Captures[0].Value, key, channelOffset, keyswitched, inputKS);
-							if (keyswitched)
+						    var articulation = new Articulation("", -1, -1, true, -1);
+						    if (defaultAttributesText != "")
+						        articulation = ParseArticulationAttributes(articulation, defaultAttributesText, key);
+						    articulation = ParseArticulationAttributes(articulation, articulationEntry.Value, key);
+                            if (articulation.Keyswitched)
 								key++;
 							if (articulation.Name.ToLower() != "none")
 								map.Articulations.Add(articulation);
@@ -193,7 +172,7 @@
 						break;
 					case "remotes":
 						map.Remotes.Clear();
-						foreach (Capture remoteEntry in match.Groups[2].Captures)
+						foreach (Capture remoteEntry in match.Groups[3].Captures)
 						{
 							var remoteName = remoteEntry.Value.ToLower();
 							var articulation = map.Articulations.First(c => c.Name.ToLower().StartsWith(remoteName, StringComparison.Ordinal));
@@ -207,6 +186,35 @@
 			}
 			map?.AssignRemotes();
 		}
+
+	    Articulation ParseArticulationAttributes(Articulation articulation, string declaration, int key)
+	    {
+	        var channelOffset = articulation.ChannelOffset;
+	        var inputKS = articulation.InputKS;
+	        var keyswitched = articulation.Keyswitched;
+            var articulationsRegex = new Regex(@" *([\w\-+/*() ]+)(?:\[(?:(Ch|NoKS|InputKS)(\+?\d+)?\|?)+\])?");
+            var articulationMatch = articulationsRegex.Matches(declaration)[0];
+	        var attributes = articulationMatch.Groups[2].Captures.Cast<Capture>().ToList();
+	        foreach (Capture attribute in attributes)
+	        {
+	            switch (attribute.Value.ToLower())
+	            {
+	                case "noks":
+	                    keyswitched = false;
+	                    break;
+	                case "ch":
+	                    channelOffset = int.Parse(articulationMatch.Groups[3].Captures[0].Value);
+	                    break;
+	                case "inputks":
+	                    inputKS = int.Parse(articulationMatch.Groups[3].Captures[0].Value) - 1;
+	                    break;
+	                default:
+	                    Debug.Assert(false);
+	                    break;
+	            }
+	        }
+	        return new Articulation(articulationMatch.Groups[1].Captures[0].Value, key, channelOffset, keyswitched, inputKS);
+	    }
 
 		void SaveExpressionMaps()
 		{

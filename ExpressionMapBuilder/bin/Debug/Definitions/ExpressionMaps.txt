@@ -42,17 +42,17 @@ Art: Legato[Ch+1|NoKS],Sustain Octaved,Spiccato Octaved,Bartok Pizzicato,Tremolo
 Map: OTMA 2 Strings Hi
 RootKey: C0
 BaseChannel: 7
-Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo slow[Slot7],Flageolet Sus,Col Legno,Swell Long,Swell Short,Irregular Arp 1,Irregular Arp 2,Flageolet Gliss Sl,Flageolet Gliss Fst
+Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo slow[InputKS7],Flageolet Sus,Col Legno,Swell Long,Swell Short,Irregular Arp 1,Irregular Arp 2,Flageolet Gliss Sl,Flageolet Gliss Fst
 
 Map: OTMA 2 Strings Mid
 RootKey: C0
 BaseChannel: 10
-Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo Slow[Slot7],None,Col Legno,Swell Long,Swell Short,Flag Gliss Vla Sl,Flag Gliss Vla Fst,Flag Gliss Celli Sl,Flag Gliss Celli Fst
+Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo Slow[InputKS7],None,Col Legno,Swell Long,Swell Short,Flag Gliss Vla Sl,Flag Gliss Vla Fst,Flag Gliss Celli Sl,Flag Gliss Celli Fst
 
 Map: OTMA 2 Strings Lo
 RootKey: C6
 BaseChannel: 13
-Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Pizzicato Secco,Tremolo Fast,Tremolo Slow[Slot7],Col Legno,Swell Long,Swell Short,Flag Gliss Celli Sl,Flag Gliss Celli Fst,Flag Gliss Bass Sl,Flag Gliss Bass Fst
+Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Pizzicato Secco,Tremolo Fast,Tremolo Slow[InputKS7],Col Legno,Swell Long,Swell Short,Flag Gliss Celli Sl,Flag Gliss Celli Fst,Flag Gliss Bass Sl,Flag Gliss Bass Fst
 
 Map: SFA 1 Strings Leg
 RootKey: C-2
@@ -77,7 +77,7 @@ Art: Short,Long,Con Sordino,Legato A,Portamento A,Legato B,Portamento B
 
 Map: SFA 3 Strings Lo
 RootKey: C5
-Art: Short[Slot4],Stac[Slot3],Long,Legato,Portamento
+Art: Short[InputKS4],Stac[InputKS3],Long,Legato,Portamento
 
 Map: LASS Violins 1
 RootKey: C-1
@@ -98,12 +98,26 @@ Map: LASS Basses
 Base: LASS Violins 1
 Art: Legato,Staccato,Spiccato,Pizzicato,Tremolo,Harmonics,Con Sordino,Bartok Pizzicato
 
-Map: 8DIOA Violins Legato
+Map: 8DIO Violins 1
+BaseChannel: 1
 RootKey: C0
 StdRemotes: false
-Art: Natural[Ch+1],Sus XFade[Ch+1],Medium Arc[Ch+1],Longer Arc[Ch+1], Heavy Vibrato[Ch+1],Short Bow 1[Ch+1],Short Bow 2[Ch+1],Loure Rep 1[Ch+1],Loure Rep 2[Ch+1],Loure Rep 3[Ch+1],Loure Rep 4[Ch+1]
-Art: Sustain 1,Sustain 2,Sustain Sord,Tremolo,Half Trill,Whole Trill,Fourth Trill,Half Trill Swell,Whole Trill Swell,Third Thrill Swell,Fourth Trill Swell.
+Art: Natural,Sus XFade,Medium Arc,Longer Arc,Heavy Vibrato,Short Bow 1,Short Bow 2,Loure Rep 1,Loure Rep 2,Loure Rep 3,Loure Rep 4
+Art[Ch+1]: Sustain 1,Sustain 2,Sustain Sord,Tremolo,Half Trill,Whole Trill,Fourth Trill,Half Trill Swell,Whole Trill Swell,Third Thrill Swell,Fourth Trill Swell
+Art[Ch+2]: Feather Spicc,Spicc on Bow,Tapped Spicc,Staccato,Bouncing Spicc,Arp Spicc,Marcato,Pizzicato,Bartok Pizz,Col Legno
+Remotes: Natural,Sustain 1,Staccato,Spicc on Bow,Pizzicato,Tremolo,Half Trill,Whole Trill
 
+Map: 8DIO Violins 1 Legato
+Base: 8DIO Violins 1
+Remotes: Natural,Sus XFade,Medium Arc,Longer Arc,Heavy Vibrato,Short Bow 1,Short Bow 2,Loure Rep 1,Loure Rep 2,Loure Rep 3,Loure Rep 4
+
+Map: 8DIO Violins 1 Longs
+Base: 8DIO Violins 1
+Remotes: Sustain 1,Sustain 2,Sustain Sord,Tremolo,Half Trill,Whole Trill,Fourth Trill,Half Trill Swell,Whole Trill Swell,Third Thrill Swell,Fourth Trill Swell
+
+Map: 8DIO Violins 1 Shorts
+Base: 8DIO Violins 1
+Remotes: Feather Spicc,Spicc on Bow,Tapped Spicc,Staccato,Bouncing Spicc,Arp Spicc,Marcato,Pizzicato,Bartok Pizz,Col Legno
 
 Map: CSCB Trumpets
 RootKey: C-1
