@@ -1,0 +1,147 @@
+Map: OTBS Violins
+RootKey: C0
+BaseChannel: 1
+Art: Legato[Ch+1|NoKS],None,Sus Romatic Vib,Staccato,Spiccato,Pizzicato,Tremolo,Trills+1,Trills+2,Harmonics,Soft Romantic Vib,Long Acc,Tremolo Acc
+
+Map: OTBS Violins 2
+Base: OTBS Violins
+BaseChannel: 4
+
+Map: OTBS Violas
+Base: OTBS Violins
+BaseChannel: 7
+
+Map: OTBS Celli
+Base: OTBS Violins
+BaseChannel: 10
+
+Map: OTBS Basses
+Base: OTBS Violins
+RootKey: C6
+BaseChannel: 13
+
+Map: OTBS Swells
+RootKey: C0
+StdRemotes: false
+Art: p-ff-P 2LL,p-ff-p LL,p-ff-p L|L,ff-p L,mf-p L,p-f-p L,p-ff L,p-mf L,ff-p S,mf-p S,p-ff S,p-mf S
+
+Map: OTBS Swells Basses
+Base: OTBS Swells
+RootKey: C6
+
+Map: OTMA 1 Strings Hi
+RootKey: C0
+BaseChannel: 1
+Art: Legato[Ch+1|NoKS],Sustain Unisono,Spiccato Unisono,Bartok Pizzicato,Tremolo Unisono,Sustain Octaved,Spiccato Octaved,Cresc Long,Cresc Short,Swell,Portato Long,Portato Short,Tremolo Decresc
+
+Map: OTMA 1 Strings Lo
+RootKey: C0
+BaseChannel: 4
+Art: Legato[Ch+1|NoKS],Sustain Octaved,Spiccato Octaved,Bartok Pizzicato,Tremolo Octaved,Cresc Long,Cresc Short,Swell,Portato Long,Portato Short,Tremolo Decresc
+
+Map: OTMA 2 Strings Hi
+RootKey: C0
+BaseChannel: 7
+Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo slow[Slot7],Flageolet Sus,Col Legno,Swell Long,Swell Short,Irregular Arp 1,Irregular Arp 2,Flageolet Gliss Sl,Flageolet Gliss Fst
+
+Map: OTMA 2 Strings Mid
+RootKey: C0
+BaseChannel: 10
+Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo Slow[Slot7],None,Col Legno,Swell Long,Swell Short,Flag Gliss Vla Sl,Flag Gliss Vla Fst,Flag Gliss Celli Sl,Flag Gliss Celli Fst
+
+Map: OTMA 2 Strings Lo
+RootKey: C6
+BaseChannel: 13
+Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Pizzicato Secco,Tremolo Fast,Tremolo Slow[Slot7],Col Legno,Swell Long,Swell Short,Flag Gliss Celli Sl,Flag Gliss Celli Fst,Flag Gliss Bass Sl,Flag Gliss Bass Fst
+
+Map: SFA 1 Strings Leg
+RootKey: C-2
+StdRemotes: false
+Art: Full 8ves,Low 8ves,Mid,High 8ves
+
+Map: SFA 1 Strings
+RootKey: C-2
+Art: Spiccato,Spic/Stac,Pizzicato,Col Legno,Long,Long CS,Tremolo,Low 8ves Short,Low 8ves Long
+
+Map: SFA 2 Strings Hi
+RootKey: C-1
+Art: Short,Short CS,Pizzicato,Col Legno,Long,Long Half,Con Sordino,Legato,Legato Half,Tremolo,Harm,Trills+1,Trills+2,Flaut
+
+Map: SFA 2 Strings Lo
+RootKey: C4
+Art: Short,Short CS (Quiet),Short CS (Longer),Pizzicato,Col Legno,Long,Long Half,Long CS,Legato,Legato Half,Trem,Flaut
+
+Map: SFA 3 Strings Cellos
+RootKey: C0
+Art: Short,Long,Con Sordino,Legato A,Portamento A,Legato B,Portamento B
+
+Map: SFA 3 Strings Lo
+RootKey: C5
+Art: Short[Slot4],Stac[Slot3],Long,Legato,Portamento
+
+Map: LASS Violins 1
+RootKey: C-1
+Art: Legato,Staccato,Spiccato,Pizzicato,Tremolo,Trills,Harmonics,Con Sordino
+
+Map: LASS Violins 2
+Base: LASS Violins 1
+Art: Legato,Staccato,Spiccato,Pizzicato,Tremolo,Trills,Con Sordino
+
+Map: LASS Violas
+Base: LASS Violins 1
+
+Map: LASS Cellos
+Base: LASS Violins 1
+Art: Legato,Staccato,Spiccato,Pizzicato,Tremolo,Harmonics,Con Sordino
+
+Map: LASS Basses
+Base: LASS Violins 1
+Art: Legato,Staccato,Spiccato,Pizzicato,Tremolo,Harmonics,Con Sordino,Bartok Pizzicato
+
+Map: 8DIOA Violins Legato
+RootKey: C0
+StdRemotes: false
+Art: Natural[Ch+1],Sus XFade[Ch+1],Medium Arc[Ch+1],Longer Arc[Ch+1], Heavy Vibrato[Ch+1],Short Bow 1[Ch+1],Short Bow 2[Ch+1],Loure Rep 1[Ch+1],Loure Rep 2[Ch+1],Loure Rep 3[Ch+1],Loure Rep 4[Ch+1]
+Art: Sustain 1,Sustain 2,Sustain Sord,Tremolo,Half Trill,Whole Trill,Fourth Trill,Half Trill Swell,Whole Trill Swell,Third Thrill Swell,Fourth Trill Swell.
+
+
+Map: CSCB Trumpets
+RootKey: C-1
+StdRemotes: false
+Art: Legato,Short 1/8, Short 1/4,Short 1/2
+
+Map: CSCB 12 Horns
+RootKey: C-1
+StdRemotes: false
+Art: Legato,Short 1/8
+
+Map: CSCB 6 Horns
+Base: CSCB Trumpets
+
+Map: CSCB 2 Horns
+Base: CSCB 12 Horns
+
+Map: CSCB fff Horns
+Base: CSCB 12 Horns
+
+Map: CSCB Solo Horns
+Base: CSCB Trumpets
+
+Map: CSCB Trombones
+Base: CSCB Trumpets
+Art: Sustain,Short 1/8, Short 1/4,Short 1/2
+
+Map: CSCB Solo Trombone
+Base: CSCB Trumpets
+
+Map: CSCB Bass Bones
+Base: CSCB 12 Horns
+RootKey: C6
+Art: Sustain,Short 1/8
+
+Map: CSCB Monster Brass
+Base: CSCB Bass Bones
+
+Map: CSCB Tuba
+Base: CSCB Trombones
+RootKey: C6

@@ -2,3 +2,10 @@ ExpressionMapBuilder/obj/
 InstrumentEnumerator/obj/
 SoundLibTool/obj/
 DrumMapConverter/obj/
+ExpressionMapBuilder/bin/Debug/Maps/
+InstrumentEnumerator/bin/
+packages/
+SoundLibTool/bin/
+DrumMapConverter/bin/Debug/
+ExpressionMapBuilderFS/bin/
+ExpressionMapBuilder/bin/
