@@ -119,6 +119,101 @@ Map: 8DIO Violins 1 Shorts
 Base: 8DIO Violins 1
 Remotes: Feather Spicc,Spicc on Bow,Tapped Spicc,Staccato,Bouncing Spicc,Arp Spicc,Marcato,Pizzicato,Bartok Pizz,Col Legno
 
+Map: 8DIO Voilins 2
+Base: 8DIO Violins 1
+BaseChannel: 4
+
+Map: 8DIO Voilins 2 Legato
+Base: 8DIO Violins 1 Legato
+BaseChannel: 4
+
+Map: 8DIO Voilins 2 Longs
+Base: 8DIO Violins 1 Longs
+BaseChannel: 4
+
+Map: 8DIO Voilins 2 Shorts
+Base: 8DIO Violins 1 Shorts
+BaseChannel: 4
+
+Map: 8DIO Violas
+BaseChannel: 7
+RootKey: C0
+StdRemotes: false
+Art: Natural,Sus XFade,Medium Arc,Heavy Vibrato,2 Bows Exp,Short Bow 1,Short Bow 2,Loure 1 60,Loure 2 60,Loure 3 60,Loure 4 60
+Art[Ch+1]: Sus Vib,Sus Vib Soft,Sus Non Vib,Sus NV-V,Sus Sordino,Tremolo p-f MW,Trill Half,Trill Whole,Trill Min 3,Trill Maj 3,Tuning
+Art[Ch+2]: Feather Spicc,Spicc Tapped,Spicc Fast UD,Spicc Fast Arp,Sord Spicc Feathered,Sord Spicc Tapped,Sord Spicc Ls,Stacc,Marcato,Marc/Tapped Spicc,Sord Marcato,Pizzicato,Bartok Pizz
+Remotes: Natural,Sus Vib,Stacc,Feather Spicc,Pizzicato,Tremolo p-f MW
+
+Map: 8DIO Violas Legato
+Base: 8DIO Violas
+Remotes: Natural,Sus XFade,Medium Arc,Heavy Vibrato,2 Bows Exp,Short Bow 1,Short Bow 2,Loure 1 60,Loure 2 60,Loure 3 60,Loure 4 60
+
+Map: 8DIO Violas Longs
+Base: 8DIO Violas
+Remotes: Sus Vib,Sus Vib Soft,Sus Non Vib,Sus NV-V,Sus Sordino,Tremolo p-f MW,Trill Half,Trill Whole,Trill Min 3,Trill Maj 3,Tuning
+
+Map: 8DIO Violas Shorts
+Base: 8DIO Violas
+Remotes: Feather Spicc,Spicc Tapped,Spicc Fast UD,Spicc Fast Arp,Sord Spicc Feathered,Sord Spicc Tapped,Sord Spicc Ls,Stacc,Marcato,Marc/Tapped Spicc,Sord Marcato,Pizzicato,Bartok Pizz
+
+Map: 8DIO Cellos
+BaseChannel: 10
+RootKey: C0
+StdRemotes: false
+Art: Natural,Sus XFade,Medium Arc,Heavy Vibrato,2 Bows Exp,Short Bow 1,Short Bow 2,Loure 1 65,Loure 2 70,Loure 3 70,Loure 4 60
+Art[Ch+1]: Sus Vib,Sus Moto Vib,Sus Non Vib,Sus NV-MV,Sus Sord Vib,Sus Sord Non Vib,Sus Sord NV-V,Sus Sord Vib 2
+Art[Ch+2]: Feather Spicc Ls,Spicc On Bow Tight,spicc On Bow,Arp,Sord Spicc Ls,Sord Spicc Arp,Bouncing Spicc,Marcato,Mrac/Feather Spicc,Marc/Spicc On Bow,Pizzicato,Bartok Pizz,Col Legno
+Remotes: Natural,Sus Vib,None,Feather Spicc,Pizzicato
+
+Map: 8DIO Cellos Legato
+Base: 8DIO Cellos
+Remotes: Natural,Sus XFade,Medium Arc,Heavy Vibrato,2 Bows Exp,Short Bow 1,Short Bow 2,Loure 1 65,Loure 2 70,Loure 3 70,Loure 4 60
+
+Map: 8DIO Cellos Longs
+Base: 8DIO Cellos
+Remotes: Sus Vib,Sus Moto Vib,Sus Non Vib,Sus NV-MV,Sus Sord Vib,Sus Sord Non Vib,Sus Sord NV-V,Sus Sord Vib 2
+
+Map: 8DIO Cellos Shorts
+Base: 8DIO Cellos
+Remotes: Feather Spicc Ls,Spicc On Bow Tight,spicc On Bow,Arp,Sord Spicc Ls,Sord Spicc Arp,Bouncing Spicc,Marcato,Mrac/Feather Spicc,Marc/Spicc On Bow,Pizzicato,Bartok Pizz,Col Legno
+
+Map: 8DIO Basses
+BaseChannel: 13
+RootKey: C0
+StdRemotes: false
+Art: Natural,Sus XFade,Medium Arc,Heavy Vibrato,2 Bows Exp,Short Bow 1,Short Bow 2,Loure 1 120,Loure 2 120,Loure 3 120,Loure 4 120
+Art[Ch+1]: Sus Vib,Sus Sordino,Tremolo p-f MW,Trill Half,Trill Whole
+Art[Ch+2]: Feather Spicc,Stacc,Marcatp,Marc/Feather Spicc,Pizzicato,Bartok Pizz
+Remotes: Natural,Sus Vib,Stacc,Feather Spicc,Pizzicato,Tremolo p-f MW,Trill Half,Trill Whole
+
+Map: 8DIO Basses Legato
+Base: 8DIO Basses
+Remotes: Natural,Sus XFade,Medium Arc,Heavy Vibrato,2 Bows Exp,Short Bow 1,Short Bow 2,Loure 1 120,Loure 2 120,Loure 3 120,Loure 4 120
+
+Map: 8DIO Basses Longs
+Base: 8DIO Basses
+Remotes: Sus Vib,Sus Sordino,Tremolo p-f MW,Trill Half,Trill Whole
+
+Map: 8DIO Basses Shorts
+Base: 8DIO Basses
+Remotes: Feather Spicc,Stacc,Marcatp,Marc/Feather Spicc,Pizzicato,Bartok Pizz
+
+Map: 8DIO Violins 1 Dynamics
+BaseChannel: 1
+RootKey: C0
+StdRemotes: false
+Art: p-mp Exp,mp Soft,mp-mf,mp-mf More Vib,mp-f Bow Change,mf Vib Steady,pfp Long,pfp Medium,pfp Short,mf Flow Attack,mf Int Attack,mf-Strong
+
+Map: 8DIO Voilins 2 Dynamics
+Base: 8DIO Violins 1 Dynamics
+BaseChannel: 4
+
+Map: 8Dio Violas Dynamics
+BaseChannel: 1
+RootKey: C0
+StdRemotes: false
+Art: mp-f Med,p-mf Long,mp-f Long,Cresc Long,mf-ff Strong Atk Med,mp-ff Strong Atk Med,mf-ff Med,fpf Long,Decresc Long
+
 Map: CSCB Trumpets
 RootKey: C-1
 StdRemotes: false

@@ -175,9 +175,14 @@
 						foreach (Capture remoteEntry in match.Groups[3].Captures)
 						{
 							var remoteName = remoteEntry.Value.ToLower();
-							var articulation = map.Articulations.First(c => c.Name.ToLower().StartsWith(remoteName, StringComparison.Ordinal));
-							map.Remotes.Add(articulation);
-						}
+						    if (remoteName.ToLower() == "none")
+						        map.Remotes.Add(new Articulation("None", -1, -1, false, -1));
+						    else
+						    {
+						        var articulation = map.Articulations.First(c => c.Name.ToLower().StartsWith(remoteName, StringComparison.Ordinal));
+						        map.Remotes.Add(articulation);
+						    }
+                        }
 						break;
 					default:
 						Debug.Assert(false);
@@ -232,6 +237,8 @@
 
 				foreach (var remote in map.Remotes)
 				{
+				    if (remote.Name == "None")
+				        continue;
 					var inputKS = remote.InputKS;
 					if (inputKS == -1 && map.StandardRemoteAssignments)
 						inputKS = _inputKSNames.FirstOrDefault(s => inputKSSlots[s.Item2] != null && (s.Item3 ? remote.Name.ToLower().StartsWith(s.Item1, StringComparison.Ordinal) : remote.Name.ToLower().Contains(s.Item1)))?.Item2 ?? -1;
