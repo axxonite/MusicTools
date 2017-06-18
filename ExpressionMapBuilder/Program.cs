@@ -156,6 +156,7 @@
 							map.Articulations.Clear();
 							map.InheritedArticulations = false;
 						}
+                        key = defaultRootKey;
 						map.Remotes.Clear();
 						var defaultAttributesText = match.Groups[2].Captures.Count > 0  ? ("Default" + match.Groups[2].Captures[0].Value) : "";
 						foreach (Capture articulationEntry in match.Groups[3].Captures)
