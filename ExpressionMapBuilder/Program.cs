@@ -115,13 +115,12 @@
 
 		[SuppressMessage("ReSharper", "PossibleNullReferenceException")] void ParseMapFile(string filename)
 		{
-			var articulationsRegex = new Regex(@" *([\w\-+/*() ]+)(?:\[(?:(Ch|NoKS|InputKS)(\+?\d+)?\|?)+\])?");
 			var expressionMapRegEx = new Regex(@"(Map|Base|RootKey|BaseChannel|Art|Remotes|StdRemotes)\s*(\[[^]]*\])?:\s*(?:([^,]+),?)+");
 			var defaultRootKey = Array.IndexOf(NoteNames, "C0");
 
 			var lines = File.ReadAllLines(filename).Where(s => s != "");
 			ExpressionMap map = null;
-			var key = defaultRootKey;
+			var rootKey = defaultRootKey;
 			foreach (var line in lines)
 			{
 				var match = expressionMapRegEx.Matches(line)[0];
@@ -132,17 +131,17 @@
 						map?.AssignRemotes();
 						var mapName = match.Groups[3].Captures[0].Value;
 						ExpressionMaps[mapName] = map = new ExpressionMap(mapName, defaultRootKey);
-						key = defaultRootKey;
+					    rootKey = defaultRootKey;
 						break;
 					case "base":
 						var baseMap = ExpressionMaps[match.Groups[3].Captures[0].Value];
 						map = ExpressionMaps[map.Name] = new ExpressionMap(map.Name, baseMap);
-						key = map.RootKey;
+					    rootKey = map.RootKey;
 						break;
 					case "rootkey":
 						var newKey = Array.IndexOf(NoteNames, match.Groups[3].Captures[0].Value);
 						map.ChangeRootKey(newKey);
-					    defaultRootKey = newKey;
+					    rootKey = newKey;
 						break;
 					case "basechannel":
 						map.BaseChannel = int.Parse(match.Groups[3].Captures[0].Value) - 1;
@@ -156,7 +155,7 @@
 							map.Articulations.Clear();
 							map.InheritedArticulations = false;
 						}
-                        key = defaultRootKey;
+                        var key = rootKey;
 						map.Remotes.Clear();
 						var defaultAttributesText = match.Groups[2].Captures.Count > 0  ? ("Default" + match.Groups[2].Captures[0].Value) : "";
 						foreach (Capture articulationEntry in match.Groups[3].Captures)
