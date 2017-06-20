@@ -142,7 +142,7 @@
 					case "rootkey":
 						var newKey = Array.IndexOf(NoteNames, match.Groups[3].Captures[0].Value);
 						map.ChangeRootKey(newKey);
-						key = newKey;
+					    defaultRootKey = newKey;
 						break;
 					case "basechannel":
 						map.BaseChannel = int.Parse(match.Groups[3].Captures[0].Value) - 1;

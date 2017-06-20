@@ -20,3 +20,6 @@ C:\Dev\MusicTools\ExpressionMapBuilderFS\bin\Debug\FSharp.Core.xml
 C:\Dev\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.fsprojResolveAssemblyReference.cache
 C:\Dev\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.exe
 C:\Dev\MusicTools\ExpressionMapBuilderFS\obj\Debug\ExpressionMapBuilderFS.pdb
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\HtmlAgilityPack.dll
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\HtmlAgilityPack.pdb
+E:\Dev\Projects\MusicTools\ExpressionMapBuilderFS\bin\Debug\HtmlAgilityPack.xml
