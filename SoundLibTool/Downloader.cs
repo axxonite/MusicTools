@@ -47,6 +47,7 @@ namespace SoundLibTool
 						try
 						{
 							var destFile = Paths.DownloadsPath + @"\" + download.Split('|')[0];
+						    destFile = destFile.Replace("&amp;", "&");
 							if (!File.Exists(destFile))
 							{
 								var destPartFile = destFile + ".part";
@@ -55,9 +56,9 @@ namespace SoundLibTool
 								if (driver == null)
 								{
 									driver = new FirefoxDriver(new FirefoxProfileManager().GetProfile("Test"));
-									driver.Manage().Timeouts().PageLoad = new TimeSpan(0, 0, 0, 5);
-									driver.Manage().Timeouts().ImplicitWait = new TimeSpan(0, 0, 0, 5);
-									driver.Manage().Timeouts().AsynchronousJavaScript = new TimeSpan(0, 0, 0, 5);
+									driver.Manage().Timeouts().PageLoad = new TimeSpan(0, 0, 0, 10);
+									driver.Manage().Timeouts().ImplicitWait = new TimeSpan(0, 0, 0, 10);
+									driver.Manage().Timeouts().AsynchronousJavaScript = new TimeSpan(0, 0, 0, 10);
 								}
 								var googleLink = download.Split('|')[1];
 								var googleLinkMatch = GoogleLinkIdRegEx.Match(googleLink);
@@ -67,16 +68,21 @@ namespace SoundLibTool
 								var url = $@"https://drive.google.com/uc?id={googleLinkId}&export=download";
 								driver.Navigate().GoToUrl(url);
 								Thread.Sleep(1000);
-								while (!File.Exists(destPartFile))
+								while (!File.Exists(destPartFile) && !File.Exists(destFile))
 								{
-									var elements = driver.FindElementsById("uc-download-link");
-									if (elements.Any())
-									{
-										elements.First().Click();
-										while (!File.Exists(destPartFile) || new FileInfo(destPartFile).Length == 0)
-											Thread.Sleep(1000);
-									}
-									else Thread.Sleep(1000);
+									var element = driver.FindElement(By.Id("uc-download-link"), 1);
+								    if (element != null)
+								    {
+								        element.Click();
+								        while ((!File.Exists(destPartFile) || new FileInfo(destPartFile).Length == 0) && !File.Exists(destFile))
+                                            Thread.Sleep(1000);
+								    }
+								    else
+								    {
+								        var errorElement = driver.FindElement(By.ClassName("uc-error-caption"), 1);
+								        if (errorElement.Text.Contains("virus"))
+								            break;
+                                    }
 								}
 							}
 							if (!completedList.Contains(download))
@@ -86,10 +92,10 @@ namespace SoundLibTool
 							}
 							break;
 						}
-						catch (NoSuchElementException)
+						catch (NoSuchElementException e)
 						{
 						}
-						catch (WebDriverException)
+						catch (WebDriverException e)
 						{
 							//driver?.Close();
 							//driver = new FirefoxDriver(new FirefoxProfileManager().GetProfile("Test"));

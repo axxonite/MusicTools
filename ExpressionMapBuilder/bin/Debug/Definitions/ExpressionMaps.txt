@@ -1,58 +1,132 @@
-Map: OTBS Violins
-RootKey: C0
+Map: OTBS Violas
+BaseChannel: 9
+StdRemotes: false
+Art[Ch9]: Legato
+Art[Ch10]: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Tremolo,Tremolo Acc,Trills+1,Trills+2,Reps 16th,Reps Triplets
+Art[Ch11]: Staccato,Staccato Bold,Spiccato,Spiccato Exposed,Pizzicato,Pizzicato Perc,Tremolo Hook,Trills+1 Hook,Trills+2 Hook,Martele fff
+Remotes: Legato,Staccato,Staccato Bold,Spiccato,Spiccato Exposed,Pizzicato,Pizzicato Perc,Tremolo,Tremolo Acc,Tremolo Hook,Trills+1,Trills+2
+
+Map: OTBS Violas Extended
+Base: OTBS Violas
+Remotes: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Martele fff,Trills+1 Hook,Trills+2 Hook,Reps 16th,Reps Triplets
+
+Map: OTBS Violins 1
 BaseChannel: 1
-Art: Legato[Ch+1|NoKS],None,Sus Romatic Vib,Staccato,Spiccato,Pizzicato,Tremolo,Trills+1,Trills+2,Harmonics,Soft Romantic Vib,Long Acc,Tremolo Acc
+StdRemotes: false
+Art[Ch1]: Legato
+Art[Ch2]: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Tremolo,Tremolo Acc,Trills+1,Trills+2,Trills+1 Acc,Trills+2 Acc,Reps 16th,Reps Triplets
+Art[Ch3]: Staccato,Staccato Bold,Spiccato,Spiccato Exposed,Spiccatissimo,Pizzicato,Pizzicato Perc,Tremolo Hook,Trills+1 Hook,Trills+2 Hook,Martele fff,Doubles
+Remotes: Legato,Staccato,Staccato Bold,Spiccato,Spiccato Exposed,Spiccatissimo,Pizzicato,Pizzicato Perc,Tremolo,Tremolo Acc,Tremolo Hook,Trills+1,Trills+2,Trills+1 Acc,Trills+2 Acc
+
+Map: OTBS Violins 1 Extended
+Base: OTBS Violins 1
+Remotes: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Martele fff,Trills+1 Hook,Trills+2 Hook,Reps 16th,Reps Triplets,Doubles
 
 Map: OTBS Violins 2
-Base: OTBS Violins
-BaseChannel: 4
+BaseChannel: 5
+StdRemotes: false
+Art[Ch5]: Legato
+Art[Ch6]: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Tremolo,Tremolo Acc,Trills+1,Trills+2,Trills+1 Acc,Trills+2 Acc,Reps 16th,Reps Triplets
+Art[Ch7]: Staccato,Staccato Bold,Spiccato,Spiccato Exposed,Pizzicato,Tremolo Hook,Trills+1 Hook,Trills+2 Hook,Martele fff,Doubles,Triples
+Remotes: Legato,Staccato,Staccato Bold,Spiccato,Spiccato Exposed,None,Pizzicato,None,Tremolo,Tremolo Acc,Tremolo Hook,Trills+1,Trills+2,Trills+1 Acc,Trills+2 Acc
 
-Map: OTBS Violas
-Base: OTBS Violins
-BaseChannel: 7
+Map: OTBS Violins 2 Extended
+Base: OTBS Violins 2
+Remotes: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Martele fff,Trills+1 Hook,Trills+2 Hook,Reps 16th,Reps Triplets,Doubles,Triples
 
 Map: OTBS Celli
-Base: OTBS Violins
-BaseChannel: 10
+StdRemotes: false
+BaseChannel: 13
+Art[Ch13]: Legato
+Art[Ch14]: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Tremolo,Tremolo Acc,Trills+1,Trills+2,Reps 16th,Reps Triplets
+Art[Ch15]: Staccato,Spiccato,Spiccato Exposed,Pizzicato,Tremolo Hook,Trills+1 Hook,Trills+2 Hook,Martele fff
+Remotes: Legato,Staccato,None,Spiccato,Spiccato Exposed,None,Pizzicato,None,Tremolo,Tremolo Acc,Tremolo Hook,Trills+1,Trills+2
+
+Map: OTBS Celli Extended
+Base: OTBS Celli
+Remotes: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Martele fff,Trills+1 Hook,Trills+2 Hook,Reps 16th,Reps Triplets
 
 Map: OTBS Basses
-Base: OTBS Violins
+StdRemotes: false
 RootKey: C6
-BaseChannel: 13
+BaseChannel: 1
+Art[Ch1]: Legato
+Art[Ch2]: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Tremolo,Tremolo Acc,Trills+1,Trills+2,Reps 16th,Reps Triplets
+Art[Ch3]: Staccato,Staccato Bold,Spiccato,Spiccato Exposed,Pizzicato,Martele fff
+Remotes: Legato,Staccato,Staccato Bold,Spiccato,Spiccato Exposed,None,Pizzicato,None,Tremolo,Tremolo Acc,None,Trills+1,Trills+2
 
-Map: OTBS Swells
-RootKey: C0
+Map: OTBS Basses Extended
+Base: OTBS Basses
+Remotes: Portato Long,Portato Short,Espressivo Long,Espressivo Short,Martele fff,None,None,Reps 16th,Reps Triplets
+
+Map: OTBS Dynamics
 StdRemotes: false
 Art: p-ff-P 2LL,p-ff-p LL,p-ff-p L|L,ff-p L,mf-p L,p-f-p L,p-ff L,p-mf L,ff-p S,mf-p S,p-ff S,p-mf S
 
-Map: OTBS Swells Basses
-Base: OTBS Swells
+Map: OTBS Dynamics Basses
+Base: OTBS Dynamics
+MoveRootKey: C6
+
+Map: OTBS Ensemble
+StdRemotes: false
 RootKey: C6
+Art: Sus Imm Romantic,Sus Soft Romantic,Pizzicato,Spiccato
+
+Map: OTBS Violins 1 Special
+StdRemotes: false
+Art: Col Legno[Ch6|NoKS],Harmonics[Ch7|NoKS]
+
+Map: OTBS Violins 2 Special
+StdRemotes: false
+Art: Col Legno[Ch8|NoKS],Harmonics[Ch9|NoKS]
+
+Map: OTBS Violas Special
+StdRemotes: false
+Art: Col Legno[Ch10|NoKS],Harmonics[Ch11|NoKS]
+
+Map: OTBS Celli Special
+StdRemotes: false
+Art: Col Legno[Ch12|NoKS],Harmonics[Ch13|NoKS]
+
+Map: OTBS Basses Special
+StdRemotes: false
+Art: Col Legno[Ch14|NoKS],Harmonics[Ch15|NoKS]
 
 Map: OTMA 1 Strings Hi
-RootKey: C0
-BaseChannel: 1
-Art: Legato[Ch+1|NoKS],Sustain Unisono,Spiccato Unisono,Bartok Pizzicato,Tremolo Unisono,Sustain Octaved,Spiccato Octaved,Cresc Long,Cresc Short,Swell,Portato Long,Portato Short,Tremolo Decresc
+StdRemotes: false
+Art[Ch1|NoKS]: Legato
+Art[Ch2]: Sustain Unisono,Sustain Octavo,Portato Long,Portato Short,Crescendo Long,Crescendo Short,Swell,Tremolo Unisono,Tremolo Decrescendo
+Art[Ch3]: Spiccato Unisono,Spiccato Octavo,Col Legno
+Remotes: Legato,Sustain Unisono,Sustain Octavo,Spiccato Unisono,Spiccato Octavo,Portato Long,Portato Short,Crescendo Long,Crescendo Short,Swell,Tremolo Unisono,Tremolo Decrescendo,Col LEgno
 
 Map: OTMA 1 Strings Lo
-RootKey: C0
-BaseChannel: 4
-Art: Legato[Ch+1|NoKS],Sustain Octaved,Spiccato Octaved,Bartok Pizzicato,Tremolo Octaved,Cresc Long,Cresc Short,Swell,Portato Long,Portato Short,Tremolo Decresc
+StdRemotes: false
+Art[Ch4|NoKS]: Legato
+Art[Ch5]: Sustain Octaved,Portalo Long,Portato Short,Crescendo Long,Crescendo Short,Swell,Tremolo Octaved,Tremolo Descrescendo
+Art[Ch6]: Spiccato Octaved,Col Legno
+Remotes: Legato,Sustain Octaved,Spiccato Octaved,Portalo Long,Portato Short,Crescendo Long,Crescendo Short,Swell,Tremolo Octaved,Tremolo Descrescendo,Col Legno
 
 Map: OTMA 2 Strings Hi
-RootKey: C0
-BaseChannel: 7
-Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo slow[InputKS7],Flageolet Sus,Col Legno,Swell Long,Swell Short,Irregular Arp 1,Irregular Arp 2,Flageolet Gliss Sl,Flageolet Gliss Fst
+StdRemotes: false
+Art[Ch7|NoKS]: Legato
+Art[Ch8]: Sustain No Vib,Sustain Romantic,Tremolo Slow,Tremolo Fast,Swell Long,Swell Short,Harmonics,Harm Gliss Slow,Harm Gliss Fast,Irregular Arp 1,Irregular Arp 2
+Art[Ch9]: Spiccatissimo,Col Legno
+Remotes: Legato,Sustain No Vib,Sustain Romantic,Spiccatissimo,Tremolo Slow,Tremolo Fast,Swell Long,Swell Short,Harmonics,Col Legno,Harm Gliss Slow,Harm Gliss Fast,Irregular Arp 1,Irregular Arp 2
 
 Map: OTMA 2 Strings Mid
-RootKey: C0
-BaseChannel: 10
-Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Tremolo Fast,Tremolo Slow[InputKS7],None,Col Legno,Swell Long,Swell Short,Flag Gliss Vla Sl,Flag Gliss Vla Fst,Flag Gliss Celli Sl,Flag Gliss Celli Fst
+StdRemotes: false
+Art[Ch10|NoKS]: Legato
+Art[Ch11]: Sustain No Vib,Sustain Romantic,Tremolo Slow,Tremolo Fast,Swell Long,Swell Short,Harm Gliss Vla Sl,Harm Gliss Vla Fst,Harm Gliss Vc Slow,Harm Gliss Vc Fast
+Art[Ch12]: Spiccatissimo,Col Legno
+Remotes: Legato,Sustain No Vib,Sustain Romantic,Spiccatissimo,Tremolo Slow,Tremolo Fast,Swell Long,Swell Short,Col Legno,Harm Gliss Vla Sl,Harm Gliss Vla Fst,Harm Gliss Vc Slow,Harm Gliss Vc Fast
 
 Map: OTMA 2 Strings Lo
+StdRemotes: false
 RootKey: C6
-BaseChannel: 13
-Art: Legato[Ch+1|NoKS],Sustain RV,Spiccatissimo,Pizzicato Secco,Tremolo Fast,Tremolo Slow[InputKS7],Col Legno,Swell Long,Swell Short,Flag Gliss Celli Sl,Flag Gliss Celli Fst,Flag Gliss Bass Sl,Flag Gliss Bass Fst
+Art[Ch13|NoKS]: Legato
+Art[Ch14]: Sustain No Vib,Sustain Romantic,Tremolo Slow,Tremolo Fast,Swell Long,Swell Short,Harm Gliss Vc Slow,Harm Gliss Vc Fast,Harm Gliss Db Slow,Harm Gliss Db Fast
+Art[Ch15]: Spiccatissimo,Pizzicato Secco,Col Legno
+Remotes: Legato,Sustain No Vib,Sustain Romantic,Spiccatissimo,Pizzicato Secco,Tremolo Slow,Tremolo Fast,Swell Long,Swell Short,Col Legno,Harm Gliss Vc Slow,Harm Gliss Vc Fast,Harm Gliss Db Slow,Harm Gliss Db Fast
 
 Map: SFA 1 Strings Leg
 RootKey: C-2
@@ -99,7 +173,6 @@ Base: LASS Violins 1
 Art: Legato,Staccato,Spiccato,Pizzicato,Tremolo,Harmonics,Con Sordino,Bartok Pizzicato
 
 Map: 8DIO Violins 1 Sustains
-RootKey: C0
 StdRemotes: false
 Art: Sustain 1,Sustain 2,Sustain Sord,Tremolo,Half Trill,Whole Trill,Third Trill,Fourth Trill,Half Trill Swell,Whole Trill Swell,Third Thrill Swell,Fourth Trill Swell
 
@@ -140,7 +213,6 @@ Base: 8DIO Violins 1 Sustains
 Art: p-mp Exp,mp Soft,mp-mf,mp-mf More Vib,mp-f Bow Change,mf Vib Steady,pfp Long,pfp Medium,pfp Short,mf Flow Attack,mf Int Attack,mf-Strong
 
 Map: 8DIO Violas Sustains
-RootKey: C0
 StdRemotes: false
 Art: Sus Vib,Sus Vib Soft,Sus Non Vib,Sus NV-V,Sus Sordino,Tremolo p-f MW,Trill Half,Trill Whole,Trill Min 3,Trill Maj 3,Tuning
 
@@ -189,7 +261,6 @@ Base: 8DIO Violas Sustains
 Art: mp-f Med,p-mf Long,mp-f Long,Cresc Long,mf-ff Strong Atk Med,mp-ff Strong Atk Med,mf-ff Med,fpf Long,Decresc Long
 
 Map: 8DIO Cellos Sustains
-RootKey: C0
 StdRemotes: false
 Art: Sus Vib,Sus Moto Vib,Sus Non Vib,Sus NV-MV,Sus Sord Vib,Sus Sord Non Vib,Sus Sord NV-V,Sus Sord Vib 2
 
@@ -256,37 +327,90 @@ Map: 8DIO Basses Dynamics
 Base: 8DIO Basses Sustains
 Art: pfp Medium, pfp Long, fpf Long,p-mp 2 Bows,mf-f 2 Bows,f-ff 2 Bows,f-p 2 Bows,p-mp Short,mp-f Short,mf-ff Short,f-p Short
 
-Map: CSCB Trumpets
+Map: CS Violins 1
+BaseChannel : 1
+Art: Legato[NoKS],Sustain[Ch+1],Tremolo[Ch+1],Half Trill[Ch+1],Whole Trill[Ch+1],Run mode[Ch+1],Staccato[Ch+2],Marcato[Ch+2],Pizzicato[Ch+2]
+
+Map: CS Violins 2
+Base: CS Violins 1
+BaseChannel: 4
+
+Map: CS Violas
+Base: CS Violins 1
+BaseChannel: 7
+
+Map: CS Cellos
+Base: CS Violins 1
+BaseChannel: 10
+
+Map: CS Basses
+Base: CS Violins 1
+BaseChannel: 13
+
+Map: CSCS Violins 1
+BaseChannel: 1
+RootKey: C0
+Art[NoKS]: Legato
+KeyMode: Diatonic
+Art[Ch+1]: Spiccato,Staccato,Marcato,Sustain,Tremolo,Trills+1,Trills+2
+RootKey: A-1
+KeyMode: Chromatic
+Art[Ch+2]: Pizzicato,Col Legno
+
+Map: CSCS Violins 2
+Base: CSCS Violins 1
+BaseChannel: 4
+
+Map: CSCS Violas
+Base: CSCS Violins 1
+BaseChannel: 7
+
+Map: CSCS Cellos
+Base: CSCS Violins 1
+BaseChannel: 10
+
+Map: CSCS Basses
+Base: CSCS Violins 1
+BaseChannel: 13
+MoveRootKey: C-1
+
+Map: CSCB 3 Shorts
 RootKey: C-1
 StdRemotes: false
 Art: Legato,Short 1/8, Short 1/4,Short 1/2
 
-Map: CSCB 12 Horns
+Map: CSCB 1 Short
 RootKey: C-1
 StdRemotes: false
 Art: Legato,Short 1/8
 
+Map: CSCB Trumpets
+Base: CSCB 3 Shorts
+
+Map: CSCB 12 Horns
+Base: CSCB 1 Short
+
 Map: CSCB 6 Horns
-Base: CSCB Trumpets
+Base: CSCB 3 Shorts
 
 Map: CSCB 2 Horns
-Base: CSCB 12 Horns
+Base: CSCB 1 Short
 
 Map: CSCB fff Horns
-Base: CSCB 12 Horns
+Base: CSCB 1 Short
 
 Map: CSCB Solo Horns
-Base: CSCB Trumpets
+Base: CSCB 3 Shorts
 
 Map: CSCB Trombones
-Base: CSCB Trumpets
+Base: CSCB 3 Shorts
 Art: Sustain,Short 1/8, Short 1/4,Short 1/2
 
 Map: CSCB Solo Trombone
-Base: CSCB Trumpets
+Base: CSCB 3 Shorts
 
 Map: CSCB Bass Bones
-Base: CSCB 12 Horns
+Base: CSCB 1 Short
 RootKey: C6
 Art: Sustain,Short 1/8
 
@@ -295,4 +419,408 @@ Base: CSCB Bass Bones
 
 Map: CSCB Tuba
 Base: CSCB Trombones
+MoveRootKey: C6
+
+Map: OT Berlin Brass
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccatissimo,Marcato Short, Marcato Long,Crescendo Short,Crescendo Long,Swell Short,Swell Long,Fortepiano,Rep 16ths,Rep 16ths Cont
+
+Map: OT Berlin Brass Lo
+StdRemotes: false
 RootKey: C6
+Art: Legato[MuteCC116],Staccato,Staccatissimo,Marcato Short, Marcato Long,Crescendo Short,Crescendo Long,Swell Short,Swell Long,Fortepiano,Rep 16ths,Rep 16ths Cont
+
+Map: OTMA Trumpets
+StdRemotes: false
+Art: Sustain,Marcato Long,Marcato Short,Staccato,Staccato Cluster,Cluster Crescendo Long,Cluster Crescendo Short,Crescendo Long,Crescendo Short,Swell,Crescendo Fluttert.
+
+Map: OTMA Horns 9
+RootKey: C6
+StdRemotes: false
+Art: Sustain,Marcato Long,Marcato Short,Staccato,Octave Rips,Crescendo Long,Crescendo Short,Swell Long,Swell Short,Crescendo Fluttert.,Cluster Crescendo Long,Cluster Crescendo Short
+
+Map: OTMA Horns 3
+StdRemotes: false
+RootKey: C6
+Art: Sustain,Marcato Long,Marcato Short,Staccato,Crescendo Long,Crescendo Short,Swell Long,Swell Short,Crescendo Fluttert.
+
+Map: OTMA Bass Trombones
+StdRemotes: false
+RootKey: C6
+Art: Sustain,Marcato Long,Marcato Short,Staccato Short,Crescendo Long,Crescendo Short,Swell Long,Swell Short,Crescendo Fluttert.
+
+Map: OTMA Cimbassi
+RootKey: C6
+StdRemotes: false
+Art: Sustain,Marcato Long,Marcato Short,Staccato,Crescendo Long,Crescendo Short,Crescendo Fluttert.,Swell Long
+
+Map: OTMA Hindenburg Tubas
+RootKey: C6
+StdRemotes: false
+Art: Sustain,Marcato Long,Marcato Short,Staccato,Crescendo Long,Crescendo Short,Crescendo Fluttert.,Swell
+
+Map: OTMA Wagner Tubas
+StdRemotes: false
+Art: Sustain Immediate Leg,Sustain Soft,Staccato,Swell Long,Swell Short,Marcato Long,Marcato Short
+
+Map: OTMA Flugelhorns
+StdRemotes: false
+Art: Sustain Leg,Staccato,Swell Long,Swell Short
+
+Map: OTMA Bass Trumpets
+StdRemotes: false
+Art: Sustain Leg,Staccato,Swell Long,Swell Short
+
+Map: OTMA Euphoniums
+StdRemotes: false
+Art: Sustain Leg,Staccato,Swell Long,Swell Short
+
+Map: OTMA Ring Tubas
+RootKey: C6
+StdRemotes: false
+Art: Sustain Leg,Staccato,Swell Long,Swell Short,Multiphonics,Fluttert. Swell Long,Fluttert. Swell Short
+
+Map: OTBW Piccolo
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Portato Long,Double Tongue,Trills+1,Trills+2,Measured Trills+1,Measures Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW Flutes 8va
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Sus No Vib,Sfz,Double Tongue,Trills+1,Trills+2,1x Trills+1,1x Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW Flutes 1 & 2
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Portato Long,Sfz,Trills+1,Trills+2,Measured Trills+1,Measured Trills+2,Double Tongue,Triple Tongue
+
+Map: OTBW Flute 3
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Portato Long,Sfz,Trills+1,Trills+2,1x Trills+1,1x Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW Oboe 1
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Portato Long,Sfz,Trills+1,Trills+2,Measured Trills+1,Measured Trills+2,Double Tongue,Triple Tongue
+
+Map: OTBW Oboe 2
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Portato Long,Sfz,Trills+1,Trills+2,1x Trills+1,1x Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW English Horn
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Portato Short,Portato Long,Sus Imm Romantic Vib,Sfz,Trills+1,Trills+2,1x Trills+1,1x Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW Clarinet Ensemble
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Sus Imm No Vib,Portato Short,Portato Long,Sfz,Trills+1,Trills+2
+
+Map: OTBW Clarinet 1
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Portato Long,Double Tongue,Trills+1,Trills+2,Measured Trills+1,Measured Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW Clarinet 2
+StdRemotes: false
+Art: Legato[MuteCC116],Staccato,Staccato Short,Portato Short,Sfz,Double Tongue,Trills+1,Trills+2,1x Trills+1,1x Trills+2,Sfz Trills+1,Sfz Trills+2
+
+Map: OTBW Bassoon 1 & 2
+StdRemotes: false
+RootKey: C6
+Art: Legato[MuteCC116],Staccato,Staccato Short,Sus Imm No Vib,Portato Short,Portato Long,Sfz,Double Tongue,Triple Tongue,Trills+1,Trills+2
+
+Map: OTMA Alto Flutes
+StdRemotes: false
+Art: Sus No Vib,Sus Romantic Vib,Staccato,Swell Long,Swell Short,Fluttertongue,Multiphonic Tonal,Multiphonics Fluttert.,Multiphonics Jetwhistle,Wind Noise Stac,Wind Noise Cresc
+
+Map: OTMA Bass Flutes
+StdRemotes: false
+Art: Sus No Vib,Sus Romantic Vib,Staccato Short,Swell Long,Swell Short,Fluttertongue,Multiphonics Tonal,Multiphonics Atonal,Jetwhistles,Wikdn Noise Stac,Wind Noise Cresc
+
+Map: OTMA Bass Clarinets
+StdRemotes: false
+RootKey: C6
+Art: Sustain Leg,Staccato,Swell Long,Swell Short,Fluttertongue,Fluttertongue Swell Long,Fluttertongue Swell Short,Fluttert Cl Swell L,Fluttert Cl Swell S,Multiphonics,Multiphonics Atmo,Air Sustains
+
+Map: OTMA Contrabass Clarinets
+StdRemotes: false
+RootKey: C6
+Art: Sustain Leg,Staccato,Swell Long,Swell Short,Fluttertongue,Multiphonics 1,Multiphonics 2
+
+Map: OTMA Bassoons & Contrabassoons
+StdRemotes: false
+RootKey: C6
+Art: Sustain,Marcato Long,Marcato Short,Staccato,Crescendo Long,Crescendo Short,Swell Long,Swell Short,Cresc Fluttert.
+
+Map: OTMA 1 Choirs
+StdRemotes: false
+Art: Sustain,Marcato Long,Marcato Short,Staccato
+
+Map: OTMA 2 Choir Hi
+StdRemotes: false
+Art: Sustain,Marcato,Staccato
+
+Map: OTMA 2 Choir Lo
+StdRemotes: false
+RootKey: C6
+Art: Sustain,Marcato,Staccato
+
+Map: OTMA Guitar Ensemble
+StdRemotes: false
+RootKey: C6
+Art: Power+Bass,Power,Power A+Bass,Power A,Power Dbl+Bass,Power Dbl,Singles+Bass,Singles
+
+Map: OTMA Guitar R
+StdRemotes: false
+RootKey: C6
+Art: Power,Power A,Power D,Single,Tremolo,Tremolo+Muted
+
+Map: OTMA Guitar L
+StdRemotes: false
+RootKey: C6
+Art: Power,None,None,Single,Tremolo,Tremolo Muted
+
+Map: OTMA Bass
+StdRemotes: false
+RootKey: C6
+Art: Single,Shorts
+
+Map: OTMA Percussion
+StdRemotes: false
+RootKey: C-1
+Art: Hits,Deep Dums,Metal Hits,Metal Bowed,Boomer FX,Boomer FF RR,FX,Small Metal,Waterphone FX M,Synth FX Hits,Synth FX Noise Pa,Synth FX Swell Lo
+
+Map: OTMA Roon Piano
+StdRemotes: false
+RootKey: C-2
+Art: Sustain,Staccato
+
+Map: OTMA Glamer Pianos
+StdRemotes: false
+RootKey: C-2
+Art: Sustain,Staccato,5th Chords,Tremolos
+
+Map: OTMA Harmonium
+StdRemotes: false
+Art: Sustain,Staccato
+
+Map: OTMA Organ
+StdRemotes: false
+Art: Sustains 8',Staccato 8',Sustains 4',Staccato 4',Sustain 8'4',Staccato 8'4'
+
+Map: OTBP Snare wo
+StdRemotes: false
+Art: Singles & Rolls,Dynamics,Singles & Rolls wo, Dynamics wo
+
+Map: OTBP Majestic Snare
+StdRemotes: false
+Art: Singles & Rolls,Dynamics,Singles & Rolls FW, Dynamics FW,Singles & Rolls W3, Dynamics W3,Singles & Rolls wo, Dynamics wo
+
+Map: OTBP Toms & TImbales
+StdRemotes: false
+Art: Basic Set,Extended Set,Rolls,Dynamics
+
+Map: OTBP Cymbals
+StdRemotes: false
+Art: Singles & Rolls,Dynamics,Brush S&R,Brush Dyn,Single & Rolls KV,Dynamics KV,Brush S&R KV,Brush Dyn KV,Dyanmics TD,Brush Dyn TD,Dynamics TD KV,Brush Dyn TD KV
+
+Map: OTBP Celesta
+StdRemotes: false
+Art: Sustain,Staccato
+
+Map: OTBP Vibraphone
+StdRemotes: false
+Art: Sus Norm,Staccato Norm,Sus Soft,Staccato Soft,Sus Slow Vib,Sus Fast Vib,Tremolo,Glissandi Up,Glissandi Down
+
+Map: OTBP Marimba
+StdRemotes: false
+Art: Singles Norm,Singles Soft,Singles Hard,Tremolo Norm,Tremolo alt. HM
+
+Map: OTBP Xylophone
+StdRemotes: false
+Art: Single Hits,Tremolo,Glissandi
+
+Map: OTBP Crotales
+StdRemotes: false
+Art: Single Hits,Single Hits Stpd,Single Hits Muted,Bow
+
+Map: OTBP Glockenspiel
+StdRemotes: false
+Art: Sus Norm,Staccato,Vibrato Norm,Tremolo Norm 5x,Tremolo Dim,Glissando Norm,Sus Soft,Vibrato Soft,Glissando Soft,Sus Hard
+
+Map: OTBP Tubular Bells
+StdRemotes: false
+Art: Soft Sustains,Hard Sustains,Soft Staccato,Hard Staccato
+
+Map: OTBP Cow Bells
+StdRemotes: false
+Art: Singles Hard,Singles Soft,Tremolo Soft
+
+Map: OTBP Tamtams
+StdRemotes: false
+Art: 65cm S&R,65cm Dyn,85cm S&R,85cm Dyn,105cm S&R,105cm Dyn,130cm S&R,130cm Dyn,130cm Timp S&R,130cm Dyn,65cm Dyn TD,85cm Dyn TD
+
+Map: OTBP Templeblocks
+StdRemotes: false
+Art: Templebl. 1,Templebl. 2,Templebl. 3,Templebl. 4
+
+Map: OTBP Timpani
+StdRemotes: false
+Art: Norm Single Hits,Norm Rolls,Hard Single Hits,Hard Rolls,Baroque Single Hits,Baroque Rolls,Soft Single Hits,Soft Rolls,Fortepiano,Impact Single Hits,Crescendo 1b,Crescendo 2b
+
+Map: SFSS Vi
+StdRemotes: false
+RootKey: C-2
+Art: Legato[NoKS],Long[Ch+1],Long CS[Ch+1],Spiccato[Ch+1],Short 0'5[Ch+1],Pizzicato[Ch+1],Col Legno[Ch+1],Tremolo[Ch+1],Trills+1[Ch+1],Trills+2[Ch+1]
+BaseChannel: 1
+
+Map: SFSS Vii
+Base: SFSS Vi
+BaseChannel: 3
+
+Map: SFSS Vla
+Base: SFSS Vi
+BaseChannel: 5
+
+Map: SFSS Vc
+Base: SFSS Vi
+BaseChannel: 7
+
+Map: SFSS Basses
+StdRemotes: false
+RootKey: C-2
+BaseChannel: 9
+Art: Legato[NoKS],Long[Ch+1],Long Flautando[Ch+1],Spiccato[Ch+1],Short 0'5[Ch+1],Pizzicato[Ch+1],Col Legno[Ch+1],Tremolo[Ch+1],Trills+1[Ch+1],Trills+2[Ch+1]
+
+Map: SFSS Ensemble
+StdRemotes: false
+RootKey: C-2
+BaseChannel: 11
+Art: Long,Long CS,Spiccato,Short 0'5,Pizzicato,Col Legno,Tremolo,Trills+1,Trills+2
+
+
+Map: SFSB Horn Solo
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Marcato,Tenuto,Staccato,Rip,Fall,Trills+1,Trills+2
+
+Map: SFSB Horns a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Stopped,Marcato,Tenuto,Staccato,Multitongued,Trills+1,Trills+2
+
+Map: SFSB Horns a6
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Tenor Trombone Solo
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long (Muted),Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Tenor Trombones a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Cuivre,Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Bass Trombone Solo
+StdRemotes: false
+RootKey: C-2
+Art: Long,Long Cuivre,Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Bass Trombones a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato (fingered),Long,Long Cuivre,Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Contrabass Trombone Solo
+StdRemotes: false
+RootKey: C-2
+Art: Long,Long Stopped,Marcato,Tenuto,Staccato,Rip,Fall
+
+Map: SFSB Trombones a6
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Cuivre,Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Trumpet Solo & a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long (Muted),Marcato,Tenuto,Staccato,Multitongued,Trills+1,Trills+2
+
+Map: SFSB Trumpets a6
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Cuivre,Marcato,Tenuto,Staccato,Multitongued,Rip,Fall
+
+Map: SFSB Tuba Solo
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Stopped,Marcato,Tenuto,Staccato,Rip,Fall
+
+Map: SFSB Contrabass Tuba Solo
+StdRemotes: false
+RootKey: C-2
+Art: Long,Marcato,Tenuto,Staccato,Rip,Fall
+
+Map: SFSB Cimbassi
+StdRemotes: false
+RootKey: C-2
+Art: Long,Long Cuivre,Marcato,Tenuto,Staccato,Rip,Fall
+
+Map: SFSW Piccolo & Flutes
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Long Harmonics,Marcato,Tenuto,Staccato,Trills+1,Trills+2
+
+Map: SFSW Bass Flute
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Long Overblown,Marcato,Tenuto,Staccato
+
+Map: SFSW Oboe Solo
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Marcato,Tenuto,Staccato,Trills+1,Trills+2
+
+Map: SFSW Oboes a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Long,Marcato,Staccato,Trills+1,Trills+2
+
+Map: SFSW English Horn
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Marcato,Tenuto,Staccato
+
+Map: SFSW Clarinet Solo
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Staccato,Trills+1,Trills+2
+
+Map: SFSW Clarinets a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Marcato,Tenuto,Staccato,Trills+1,Trills+2
+
+Map: SFSW Bass Clarinet
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Tenuto,Staccato,Trills+1,Trills+2
+
+Map: SFSW Contrabass Clarinet
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Marcato,Tenuto,Staccato
+
+Map: SFSW Bassoon Solo
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Long Harmonics,Marcato,Tenuto,Staccato,Trills+1,Trills+2
+
+Map: SFSW Bassoons a2
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Long Flutter,Marcato,Tenuto,Staccato,Trills+1,Trills+2
+
+Map: SFSW Contrabassoon
+StdRemotes: false
+RootKey: C-2
+Art: Legato,Long,Marcato,Tenuto,Staccato
